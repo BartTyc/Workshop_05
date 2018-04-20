@@ -42,4 +42,14 @@ public class BookController {
     public void addBook (@RequestBody Book book) {
         memoryBookService.add(book);
     }
+
+    @PutMapping("/{id}")
+    public void putBook (@PathVariable long id, @RequestBody Book book){
+        memoryBookService.edit( id, book);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook (@PathVariable long id){
+        memoryBookService.delete(id);
+    }
 }

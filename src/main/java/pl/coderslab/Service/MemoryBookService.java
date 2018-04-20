@@ -19,4 +19,17 @@ public class MemoryBookService {
                 "Cay Horstmann, Gary Cornell", "Helion", "programming"));
     }
     public List<Book> getList() {return list;}
-    public void setList(List<Book> list) {this.list = list;}}
+    public void setList(List<Book> list) {this.list = list;}
+    public Book getById(long id) {
+        for (Book book : list){
+            if (book.getId() == id){
+                return book;
+            }
+        }
+        return null;
+    }
+
+    public void add (Book book){
+        list.add(book);
+    }
+}

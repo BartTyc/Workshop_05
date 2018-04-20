@@ -2,6 +2,7 @@ package pl.coderslab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.Service.BookService;
 import pl.coderslab.Service.MemoryBookService;
 import pl.coderslab.model.Book;
 
@@ -11,10 +12,10 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    private MemoryBookService memoryBookService;
+    private BookService memoryBookService;
 
     @Autowired
-    public BookController(MemoryBookService memoryBookService) {
+    public BookController(BookService memoryBookService) {
         this.memoryBookService = memoryBookService;
     }
 
